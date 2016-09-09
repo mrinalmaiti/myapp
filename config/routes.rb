@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#hello'
+  resources :dialogues
+  root 'dialogues#index'
+  #root 'application#hello'
 end
