@@ -8,22 +8,32 @@
 </head>
 <body>
 
-	<div class="container">
-  <div class="row">
-    <h3>Users</h3>
-    <div class="column">
-      <table class="table">
-        <tbody>
-          <% @users.each do |user| %>
-            <tr>
-              <%= render user %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 style="background-color:red">
+Background-color set by using red
+</h2>
+
+<h2 style="background-color:orange">
+Background-color set by using orange
+</h2>
+
+<h2 style="background-color:yellow">
+Background-color set by using yellow
+</h2>
+
+<h2 style="background-color:blue;color:white">
+Background-color set by using blue
+</h2>
+
+<h2 style="background-color:cyan">
+Background-color set by using cyan
+</h2>
+
+</body>
+</html>
 
 
 <%= yield %>
