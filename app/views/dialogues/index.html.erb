@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Image</th>
       <th>Name</th>
-      <th>Dial</th>
+      <th>phone</th>
+      <th>Address</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,7 +20,8 @@
         <td><%= dialogue.dial %></td>
         <td><%= link_to 'Show', dialogue %></td>
         <td><%= link_to 'Edit', edit_dialogue_path(dialogue) %></td>
-        <td><%= link_to 'Destroy', dialogue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', dialogue, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+        <td><%= link_to 'delete',dialogue,method: :delete, data: {confirm: 'kahe'} %></td>
       </tr>
     <% end %>
   </tbody>

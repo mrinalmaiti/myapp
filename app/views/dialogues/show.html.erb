@@ -1,19 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>Name:</strong>
   <%= @dialogue.image %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Phone:</strong>
   <%= @dialogue.name %>
 </p>
 
 <p>
-  <strong>Dial:</strong>
+  <strong>Address:</strong>
   <%= @dialogue.dial %>
 </p>
+
 
 <%= link_to 'Edit', edit_dialogue_path(@dialogue) %> |
 <%= link_to 'Back', dialogues_path %>

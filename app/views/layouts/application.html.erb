@@ -6,79 +6,46 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-
-
-
-
-<style>
-div.container {
-    width: 100%;
-    border: 1px solid gray;
-}
-
-header, footer {
-    padding: 1em;
-    color: white;
-    background-color: black;
-    clear: left;
-    text-align: center;
-}
-
-nav {
-    float: left;
-    max-width: 160px;
-    margin: 0;
-    padding: 1em;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html>
    
-nav ul a {
-    text-decoration: none;
-}
-
-article {
-    margin-left: 170px;
-    border-left: 1px solid gray;
-    padding: 1em;
-    overflow: hidden;
-}
-</style>
-</head>
-<body>
-
-<div class="container">
-
-<header>
-   <h1>My Page</h1>
-</header>
-  
-<nav>
-  <ul>
-    <li><a href="#">Mrinal</a></li>
-    <li><a href="#">Prabir</a></li>
-    <li><a href="#">Totan</a></li>
-    <li><a href="#">Rahul</a></li>
-  </ul>
-</nav>
-
-<article>
-  <h1>CP</h1>
-  <p>cpcpcpcpcpcpcpcpcpcppppcpcpcppcpcpcpcpc.</p>
-  <p>Spcpcpcpcpcpcpcp.</p>
-</article>
-
-<footer>Mrinal
-<script type="text/javascript" src="http://getprogramcode.com/wp-content/uploads/2014/08/jetplane.js"></script>
-    <script>
-        doodle.init("http://getprogramcode.com/wp-content/uploads/2014/08/20140814-202216-plane.png");
-    </script>
-</footer>
-
-</div>
+   <head>
+      <script src = "https://maps.googleapis.com/maps/api/js"></script>
+      
+      <script>
+         var myCenter = new google.maps.LatLng(22.5285, 88.3369);
+         function loadMap(){
+			
+            var mapProp = {
+               center: myCenter,
+               zoom:5,
+               mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            
+            var marker = new google.maps.Marker({
+               position: myCenter,
+               title:'Click to zoom'
+            });
+            
+            marker.setMap(map);
+            
+            //Zoom to 7 when clicked on marker
+            google.maps.event.addListener(marker,'click',function() {
+               map.setZoom(9);
+               map.setCenter(marker.getPosition());
+            });
+         }
+      </script>
+      
+   </head>
+   
+   <body onload = "loadMap()">
+      <div id = "googleMap" style = "width:580px; height:400px;"></div>
+   </body>
+   
+</html>
 
 
 
