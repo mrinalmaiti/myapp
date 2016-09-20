@@ -6,46 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-<!DOCTYPE html>
-<html>
-   
-   <head>
-      <script src = "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDG_mWnfdbhPttaxHOCQyo3TLxEh1zU7Rk"></script>
-      
-      <script>
-         var myCenter = new google.maps.LatLng(22.5285, 88.3369);
-         function loadMap(){
-			
-            var mapProp = {
-               center: myCenter,
-               zoom:5,
-               mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            
-            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-            
-            var marker = new google.maps.Marker({
-               position: myCenter,
-               title:'Click to zoom'
-            });
-            
-            marker.setMap(map);
-            
-            //Zoom to 7 when clicked on marker
-            google.maps.event.addListener(marker,'click',function() {
-               map.setZoom(9);
-               map.setCenter(marker.getPosition());
-            });
-         }
-      </script>
-      
-   </head>
-   
-   <body onload = "loadMap()">
-      <div id = "googleMap" style = "width:580px; height:400px;"></div>
-   </body>
-   
-</html>
+
 
 
 
